@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -587,7 +588,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e21106320ddd56f4087ff842095111c7,
         type: 3}
       propertyPath: m_Name
-      value: "\u308F\u305F\u3042\u3081"
+      value: CandyStand
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -659,7 +660,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6d34e02bd7dac59419e7e3952969046a,
         type: 3}
       propertyPath: m_Name
-      value: "\u30D5\u30E9\u30F3\u30AF\u30D5\u30EB\u30C8\u5C4B\u53F0"
+      value: FrankfurtStand
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1660,12 +1661,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1001 &776703977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1727,7 +1728,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fe47ab42bcb8a98498da7e7fced03983,
         type: 3}
       propertyPath: m_Name
-      value: "\u30A4\u30AB\u713C\u304D\u5C4B\u53F0"
+      value: IkayakiStand
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1905,7 +1906,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b2102fd7962503842af82370e9197e43,
         type: 3}
       propertyPath: m_Name
-      value: "\u713C\u304D\u3068\u3046\u3082\u308D\u3053\u3057\u5C4B\u53F0"
+      value: BakedCornStand
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2565,7 +2566,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5e1ce1e9e32850741add0b5481a67850,
         type: 3}
       propertyPath: m_Name
-      value: "\u30C1\u30E7\u30B3\u30D0\u30CA\u30CA\u5C4B\u53F0"
+      value: ChocobananaStand
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3190,7 +3191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1639200281}
   m_Layer: 0
-  m_Name: "\u5C4B\u53F0"
+  m_Name: Stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3280,7 +3281,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c1a34d8776e39bf42914b9a547639438,
         type: 3}
       propertyPath: m_Name
-      value: "\u6D77\u306E\u795E\u793E"
+      value: Shrine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3423,7 +3424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question: "\u308F\u305F\u3042\u3081\u3092\u4F5C\u308B"
-  sceneToLoad: NextScene
+  sceneToLoad: GameScene1
   playerLayer: 3
 --- !u!65 &1755132852
 BoxCollider:
@@ -3752,7 +3753,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
 --- !u!114 &1966968830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3852,7 +3853,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3dc19523f882aca49afef3a41b586e2a,
         type: 3}
       propertyPath: m_Name
-      value: "\u713C\u304D\u9CE5\u5C4B\u53F0"
+      value: YakitoriStand
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3924,7 +3925,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c1fa00d6ce289f64684f618077887c53,
         type: 3}
       propertyPath: m_Name
-      value: "\u308A\u3093\u3054\u98F4\u5C4B\u53F0"
+      value: AppleCandyStand
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4049,7 +4050,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f3118939c4078b9408d0d601dc828309,
         type: 3}
       propertyPath: m_Name
-      value: "\u305F\u3053\u3084\u304D\u5C4B\u53F0"
+      value: TakoyakiStand
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -5,17 +5,17 @@ using UnityEngine;
 public class CandyRotator : MonoBehaviour
 {
     [Header("回転")]
-    public float rotateSpeed = 120f;     // 回す速さ（度/秒）
+    [SerializeField] float rotateSpeed = 120f;     // 回す速さ（度/秒）
 
     [Header("綿あめ")]
-    public Transform cottonCandy;        // 棒先端の綿あめ
+    [SerializeField] Transform cottonCandy;        // 棒先端の綿あめ
     public float minScale = 0.5f;        // 初期サイズ
-    public float maxScale = 5.0f;        // 上限サイズ（見た目の最大）
-    public float growPerSecond = 0.6f;   // 入力中の成長速度
+    [SerializeField] float maxScale = 5.0f;        // 上限サイズ（見た目の最大）
+    [SerializeField] float growPerSecond = 0.6f;   // 入力中の成長速度
 
     [Header("判定")]
-    public float perfectSize = 3.0f;     // 目標サイズ
-    public float tolerance = 0.5f;      // 許容範囲（±で判定）
+    [SerializeField] float perfectSize = 3.0f;     // 目標サイズ
+    [SerializeField] float tolerance = 0.5f;      // 許容範囲（±で判定）
 
     public bool IsPlaying { get; set; } = true;  // GameManagerからON/OFF
 

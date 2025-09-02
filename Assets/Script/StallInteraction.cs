@@ -5,9 +5,9 @@ using UnityEngine;
 public class StallInteraction : MonoBehaviour
 {
     [TextArea]
-    public string question = "○○を作る"; // 質問文
-    public string sceneToLoad = "NextScene";      // 遷移先シーン名
-    public int playerLayer = 3;                   // プレイヤーのLayer番号（例: PlayerLayerを8に設定）
+    [SerializeField] string question = "○○を作る"; // 質問文
+    [SerializeField] string sceneToLoad = "NextScene";      // 遷移先シーン名
+    [SerializeField] int playerLayer = 3;                   // プレイヤーのLayer番号
 
     private PopupManager popupManager;
     private bool playerInRange = false;

@@ -4,9 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class PopupManager : MonoBehaviour
 {
-    public GameObject popupPanel;          // ポップアップUIパネル
-    public TextMeshProUGUI questionText;   // 質問文（TMP）
+    [SerializeField] GameObject popupPanel;          // ポップアップUIパネル
+    [SerializeField] TextMeshProUGUI questionText;   // 質問文（TMP）
     private string nextSceneName;
+
 
     void Start()
     {

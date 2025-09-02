@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -9,27 +8,32 @@ public class CandyGameManager : MonoBehaviour
     public static CandyGameManager Instance { get; private set; }
 
     [Header("参照")]
-    public CandyRotator rotator;               // CandyPivot のスクリプト
-    public Transform stick;                    // 棒
-    public Transform candy;                    // 綿あめ
+    [SerializeField] CandyRotator rotator;               // CandyPivot のスクリプト
+    [SerializeField] Transform stick;                    // 棒
+    [SerializeField] Transform candy;                    // 綿あめ
 
     [Header("UI")]
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI timerText;
-    public GameObject resultPopup;             // 吹き出し等
-    public TextMeshProUGUI resultPopupText;
+    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] GameObject resultPopup;
+    [SerializeField] TextMeshProUGUI resultPopupText;
+    [SerializeField] TextMeshProUGUI countdownText;
 
     [Header("効果音（任意）")]
-    public AudioSource audioSource;
-    public AudioClip successClip;
-    public AudioClip failClip;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip successClip;
+    [SerializeField] AudioClip failClip;
 
     [Header("ルール")]
-    public float timeLimit = 60f;
+    [SerializeField] float timeLimit = 60f;
 
     int score;
     float timeLeft;
     bool playing;
+
+    // 追加: 棒の初期位置を保存
+    Vector3 stickStartPos;
+    Quaternion stickStartRot;
 
     void Awake()
     {
@@ -39,7 +43,14 @@ public class CandyGameManager : MonoBehaviour
 
     void Start()
     {
-        StartGame();
+        // 棒の初期位置・回転を記録
+        if (stick != null)
+        {
+            stickStartPos = stick.position;
+            stickStartRot = stick.rotation;
+        }
+
+        StartCoroutine(GameStartRoutine());
     }
 
     void Update()
@@ -55,6 +66,30 @@ public class CandyGameManager : MonoBehaviour
         UpdateUI();
     }
 
+    IEnumerator GameStartRoutine()
+    {
+        playing = false;
+        if (rotator != null) rotator.IsPlaying = false;
+
+        int count = 3;
+        while (count > 0)
+        {
+            if (countdownText != null)
+                countdownText.text = count.ToString();
+            yield return new WaitForSeconds(1f);
+            count--;
+        }
+
+        if (countdownText != null)
+            countdownText.text = "スタート!";
+        yield return new WaitForSeconds(0.5f);
+
+        if (countdownText != null)
+            countdownText.text = "";
+
+        StartGame();
+    }
+
     public void StartGame()
     {
         score = 0;
@@ -63,8 +98,7 @@ public class CandyGameManager : MonoBehaviour
         if (rotator != null) rotator.IsPlaying = true;
         UpdateUI();
 
-        // 初期の綿あめ
-        if (candy != null) candy.localScale = Vector3.one * rotator.minScale;
+        ResetStickAndCandy();
     }
 
     void EndGame()
@@ -73,8 +107,6 @@ public class CandyGameManager : MonoBehaviour
         if (rotator != null) rotator.IsPlaying = false;
 
         ShowPopup($"終了！スコア: {score}");
-        // ここでリザルト画面表示やハイスコア保存など
-        // PlayerPrefs.SetInt("HighScore_Cotton", Mathf.Max(score, PlayerPrefs.GetInt("HighScore_Cotton", 0)));
     }
 
     public void OnCandyFinished(int addScore, string message, bool success)
@@ -84,9 +116,22 @@ public class CandyGameManager : MonoBehaviour
         score += addScore;
         UpdateUI();
 
-        // 演出
         ShowPopup(message);
         PlaySE(success);
+
+        // 完成したので棒と綿あめをリセット
+        ResetStickAndCandy();
+    }
+
+    void ResetStickAndCandy()
+    {
+        if (stick != null)
+        {
+            stick.position = stickStartPos;
+            stick.rotation = stickStartRot;
+        }
+        if (candy != null)
+            candy.localScale = Vector3.one * (rotator != null ? rotator.minScale : 0.5f);
     }
 
     void UpdateUI()
@@ -116,4 +161,3 @@ public class CandyGameManager : MonoBehaviour
         if (clip != null) audioSource.PlayOneShot(clip);
     }
 }
-
