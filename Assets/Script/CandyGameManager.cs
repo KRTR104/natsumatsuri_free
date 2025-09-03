@@ -1,14 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CandyGameManager : MonoBehaviour
 {
     public static CandyGameManager Instance { get; private set; }
 
     [Header("参照")]
-    [SerializeField] CandyRotator rotator;               // CandyPivot のスクリプト
+    [SerializeField] CandyRotator rotator;                // CandyPivot のスクリプト
     [SerializeField] Transform stick;                    // 棒
     [SerializeField] Transform candy;                    // 綿あめ
 
@@ -24,7 +24,7 @@ public class CandyGameManager : MonoBehaviour
     [SerializeField] AudioClip successClip;
     [SerializeField] AudioClip failClip;
 
-    [Header("ルール")]
+    [Header("制限時間")]
     [SerializeField] float timeLimit = 60f;
 
     int score;
@@ -107,6 +107,17 @@ public class CandyGameManager : MonoBehaviour
         if (rotator != null) rotator.IsPlaying = false;
 
         ShowPopup($"終了！スコア: {score}");
+
+        // 3秒後にシーン遷移
+        StartCoroutine(EndRoutine());
+    }
+
+    IEnumerator EndRoutine()
+    {
+        yield return new WaitForSeconds(3f);
+
+        // シーン遷移
+        SceneManager.LoadScene("SelectScene");
     }
 
     public void OnCandyFinished(int addScore, string message, bool success)
