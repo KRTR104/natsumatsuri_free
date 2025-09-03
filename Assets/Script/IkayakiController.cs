@@ -6,15 +6,15 @@ using UnityEngine.UI;
 public class IkayakiController : MonoBehaviour
 {
     [Header("参照")]
-    public Image ikaImage;                 // 表示するイカのImage
-    public Sprite ikaRaw;                  // 生
-    public Sprite ikaCooked;               // ちょうど
-    public Sprite ikaBurned;               // 焦げ
+    [SerializeField] Image ikaImage;                 // 表示するイカのImage
+    [SerializeField] Sprite ikaRaw;                  // 生
+    [SerializeField] Sprite ikaCooked;               // ちょうど
+    [SerializeField] Sprite ikaBurned;               // 焦げ
 
     [Header("焼き加減設定")]
-    public float cookSpeed = 1.0f;         // 焼ける速さ
-    public float perfectTime = 3.0f;       // ちょうど良い時間
-    public float tolerance = 0.7f;         // 許容範囲
+    [SerializeField] float cookSpeed = 1.0f;         // 焼ける速さ
+    [SerializeField] float perfectTime = 3.0f;       // ちょうど良い時間
+    [SerializeField] float tolerance = 0.7f;         // 許容範囲
 
     float cookTimer = 0f;
 
