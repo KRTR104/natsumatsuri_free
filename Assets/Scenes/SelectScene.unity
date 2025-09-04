@@ -1069,7 +1069,6 @@ GameObject:
   - component: {fileID: 541327221}
   - component: {fileID: 541327222}
   - component: {fileID: 541327224}
-  - component: {fileID: 541327223}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -1113,21 +1112,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.5504973, z: 1.6158094}
   m_Center: {x: 0, y: 0.7752489, z: -0.30790472}
---- !u!114 &541327223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 541327220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2edf89397513942921e261c6c29782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  question: "\u308A\u3093\u3054\u98F4\u3092\u4F5C\u308B"
-  sceneToLoad: NextScene
-  playerLayer: 3
 --- !u!65 &541327224
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1402,7 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question: "\u713C\u304D\u3068\u3046\u3082\u308D\u3053\u3057\u3092\u4F5C\u308B"
-  sceneToLoad: NextScene
+  sceneToLoad: GameScene3
   playerLayer: 3
 --- !u!65 &621058454
 BoxCollider:
@@ -2405,7 +2389,6 @@ GameObject:
   - component: {fileID: 1126481218}
   - component: {fileID: 1126481219}
   - component: {fileID: 1126481221}
-  - component: {fileID: 1126481220}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -2449,21 +2432,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.9867871, z: 1}
   m_Center: {x: -0, y: 0.49339366, z: -0}
---- !u!114 &1126481220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126481217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2edf89397513942921e261c6c29782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  question: "\u30D5\u30E9\u30F3\u30AF\u30D5\u30EB\u30C8\u3092\u4F5C\u308B"
-  sceneToLoad: NextScene
-  playerLayer: 3
 --- !u!65 &1126481221
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2783,7 +2751,6 @@ GameObject:
   - component: {fileID: 1454746468}
   - component: {fileID: 1454746469}
   - component: {fileID: 1454746471}
-  - component: {fileID: 1454746470}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -2827,21 +2794,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9999998, y: 2.127116, z: 1.6187105}
   m_Center: {x: -0, y: 0.563558, z: -0.30935526}
---- !u!114 &1454746470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1454746467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2edf89397513942921e261c6c29782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  question: "\u3084\u304D\u3068\u308A\u3092\u4F5C\u308B"
-  sceneToLoad: NextScene
-  playerLayer: 3
 --- !u!65 &1454746471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3009,7 +2961,6 @@ GameObject:
   - component: {fileID: 1512008782}
   - component: {fileID: 1512008783}
   - component: {fileID: 1512008785}
-  - component: {fileID: 1512008784}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -3053,21 +3004,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.3632898, z: 1.6288013}
   m_Center: {x: 0, y: 0.6816449, z: -0.31440067}
---- !u!114 &1512008784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512008781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2edf89397513942921e261c6c29782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  question: "\u30C1\u30E7\u30B3\u30D0\u30CA\u30CA\u3092\u4F5C\u308B"
-  sceneToLoad: NextScene
-  playerLayer: 3
 --- !u!65 &1512008785
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3100,7 +3036,6 @@ GameObject:
   - component: {fileID: 1540798125}
   - component: {fileID: 1540798126}
   - component: {fileID: 1540798128}
-  - component: {fileID: 1540798127}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -3144,21 +3079,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.0562253, z: 1.610815}
   m_Center: {x: 0, y: 0.5281129, z: -0.30540752}
---- !u!114 &1540798127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540798124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2edf89397513942921e261c6c29782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  question: "\u305F\u3053\u3084\u304D\u3092\u4F5C\u308B"
-  sceneToLoad: NextScene
-  playerLayer: 3
 --- !u!65 &1540798128
 BoxCollider:
   m_ObjectHideFlags: 0
